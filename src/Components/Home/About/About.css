@@ -1,0 +1,22 @@
+.fab{
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    line-height: 30px!important;
+    text-align: center;
+    margin: 0 20px;
+    cursor: pointer;
+    transition:.4s;
+    color: black;
+
+  
+}
+.text_custom {
+    color: #0d1137;
+}
+
+.fab:hover {
+   transform: scale(1.3);
+   background:#f3ca20;
+  
+}
