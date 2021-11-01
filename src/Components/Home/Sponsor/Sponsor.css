@@ -6,3 +6,26 @@
     -o-transform: translateY(50%);
 }
 
+
+@media only screen and (max-width: 576px) { 
+
+    .sm_responsive {
+        flex-direction: column;
+
+    }
+
+    .transform {
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+}
+
+.sponsor_sm_margin{
+    text-align: center;
+    margin: 10px 0!important;
+}
+
+
+ }

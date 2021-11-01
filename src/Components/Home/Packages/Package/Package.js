@@ -38,7 +38,7 @@ const Package = (props) => {
             onClick={clickhandler}
             className="btn btn_custom text-dark text-uppercase fw-normal"
           >
-            book now <i class="fas fa-cart-plus"></i>
+            book now <i className="fas fa-cart-plus"></i>
           </button>
         </Card.Body>
       </Card>

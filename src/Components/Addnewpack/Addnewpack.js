@@ -52,7 +52,7 @@ const Addnewpack = () => {
           </div>
           <div className="col-lg-6">
             <h3 className="text-uppercase fw-bold border-bottom py-3">
-              Create custom project
+              Create custom Package
             </h3>
             <Form className="shadow-lg p-3" onSubmit={clickhandler}>
               <div className="row">

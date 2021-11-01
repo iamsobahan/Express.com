@@ -3,3 +3,15 @@ li {
     list-style: none;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 576px) {
+    .footer_sm_margin{
+        margin-bottom: 15px!important;
+    }
+
+    .footer_sm_padding {
+        padding: 0!important;
+        margin: 0 !important;
+       
+    }
+}

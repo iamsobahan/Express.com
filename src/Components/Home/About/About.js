@@ -19,11 +19,11 @@ const About = () => {
               organizations around the world to drive sales and boost loyalty.
             </p>
             <button className="btn btn-warning fw-normal text-uppercase">
-              Know more <i class="fas fa-long-arrow-alt-right"></i>
+              Know more <i className="fas fa-long-arrow-alt-right"></i>
             </button>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
+            <i className="fab fa-facebook-f"></i>
+            <i className="fab fa-twitter"></i>
+            <i className="fab fa-instagram"></i>
           </div>
           <div className="col-lg-6">
             <img className="img-fluid" src={about} alt="" />

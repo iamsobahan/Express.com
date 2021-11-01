@@ -6,23 +6,23 @@ const Footer = () => {
   return (
     <div className="bg-dark py-5">
       <div className="container">
-        <div className="row border-bottom border-muted pb-5 mt-5">
-          <div className="col-lg-3">
+        <div className="row border-bottom border-muted pb-5 footer_sm_padding mt-5">
+          <div className="col-lg-3 footer_sm_margin">
             <img src={foterLogo} alt="" />
           </div>
-          <div className="col-lg-3">
+          <div className="col-lg-3 footer_sm_margin">
             <li>WEEBLY THEMES</li>
             <li>PRE-SALE FAQS</li>
             <li>SUBMIT A TICKETS</li>
             <li>SERVICES</li>
             <li>THEME TWEAK</li>
           </div>
-          <div className="col-lg-3">
+          <div className="col-lg-3 footer_sm_margin">
             <li>SHOWCASE</li>
             <li>WIDGETKIT</li>
             <li>SUPPORT</li>
           </div>
-          <div className="col-lg-3">
+          <div className="col-lg-3 footer_sm_margin">
             <li>ABOUT US</li>
             <li>CONTACT US</li>
             <li>AFFILIATES</li>

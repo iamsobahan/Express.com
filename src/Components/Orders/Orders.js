@@ -1,26 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Spinner, Table } from "react-bootstrap";
 import useAuth from "../../Hooks/useAuth";
 
 import Order from "./Order/Order";
 
 const Orders = () => {
   const [orders, setorders] = useState([]);
-  const { user } = useAuth();
+  const { user, isloading } = useAuth();
 
   useEffect(() => {
-    fetch("https://grisly-dungeon-07150.herokuapp.com/packages/orders")
+    fetch("https://grisly-dungeon-07150.herokuapp.com/packages/order")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         const filTer = data.filter((order) => order.email === user.email);
         setorders(filTer);
       });
-  }, []);
+  }, [user]);
+
+  if (isloading) {
+    return (
+      <Spinner
+        className="d-flex justify-content-center align-items-center my-5 mx-auto"
+        animation="border"
+      />
+    );
+  }
 
   const clickhandler = (id) => {
     const proceed = window.confirm("are you going to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/packages/${id}`, {
+      fetch(`https://grisly-dungeon-07150.herokuapp.com/packages/order/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -35,14 +45,14 @@ const Orders = () => {
   };
   return (
     <div className="container text-center my-5">
-      <h3 className="border-bottom mb-4 text-uppercase text-start fw-bold">
-        Orders :{" "}
+      <h3 className="border-bottom mb-4 pb-2 text-uppercase text-start">
+        My Orders :{" "}
       </h3>
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>Package id</th>
             <th>Package Name</th>
+            <th>Order time</th>
             <th>Client Name</th>
             <th>Address</th>
             <th>Cancel order</th>

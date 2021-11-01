@@ -30,6 +30,18 @@ const Placeorder = () => {
     const number = numberRef.current.value;
     const comment = commentRef.current.value;
     const add = addRef.current.value;
+
+    const today = new Date();
+    const date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    const time =
+      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const dateTime = time + " " + date;
+
     const order = {
       pack,
       name,
@@ -38,8 +50,10 @@ const Placeorder = () => {
       comment,
       add,
       status: "pending",
+      dateTime,
     };
-    fetch("http://localhost:5000/packages", {
+
+    fetch("https://grisly-dungeon-07150.herokuapp.com/packages/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

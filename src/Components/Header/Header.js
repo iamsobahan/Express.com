@@ -21,7 +21,7 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto align-items-center">
             <NavLink
-              className="fw-normal text-uppercase mx-3"
+              className="header_sm_margin fw-normal text-uppercase mx-3"
               activeStyle={active}
               to="/home"
             >
@@ -30,7 +30,7 @@ const Header = () => {
 
             {user.displayName && (
               <NavLink
-                className="fw-normal text-uppercase mx-3"
+                className="header_sm_margin fw-normal text-uppercase mx-3"
                 activeStyle={active}
                 to="/orders"
               >
@@ -39,7 +39,7 @@ const Header = () => {
             )}
             {user.displayName && (
               <NavLink
-                className="fw-normal text-uppercase mx-3"
+                className="header_sm_margin fw-normal text-uppercase mx-3"
                 activeStyle={active}
                 to="/manageorders"
               >
@@ -48,7 +48,7 @@ const Header = () => {
             )}
             {user.displayName && (
               <NavLink
-                className="fw-normal text-uppercase mx-3"
+                className="header_sm_margin fw-normal text-uppercase mx-3"
                 activeStyle={active}
                 to="/addnewpack"
               >
@@ -58,13 +58,16 @@ const Header = () => {
 
             {user.displayName ? (
               <NavLink className=" mx-3" to="/home">
-                <button className="btn btn-warning" onClick={logOut}>
+                <button
+                  className="header_sm_margin btn btn-warning"
+                  onClick={logOut}
+                >
                   Logout
                 </button>
               </NavLink>
             ) : (
               <NavLink
-                className="fw-normal text-uppercase mx-3"
+                className="header_sm_margin fw-normal text-uppercase mx-3"
                 activeStyle={active}
                 to="/login"
               >

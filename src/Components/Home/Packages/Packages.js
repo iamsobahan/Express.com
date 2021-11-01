@@ -1,11 +1,15 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
+import useAuth from "../../../Hooks/useAuth";
 import Package from "./Package/Package";
 
 const Packages = () => {
+  const { isloading } = useAuth();
   const [user_packages, setuser_package] = useState([]);
+
+  //  fix redirect issue.. like when when we refresh the website the private page redirect to login page..
 
   useEffect(() => {
     fetch("https://grisly-dungeon-07150.herokuapp.com/packages")
@@ -13,6 +17,14 @@ const Packages = () => {
       .then((data) => setuser_package(data));
   }, []);
 
+  if (isloading) {
+    return (
+      <Spinner
+        className="d-flex justify-content-center align-items-center my-5 mx-auto"
+        animation="border"
+      />
+    );
+  }
   return (
     <div className="mt-5">
       <Container className="mt-5">

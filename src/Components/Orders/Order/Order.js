@@ -2,13 +2,13 @@ import React from "react";
 import "./Order.css";
 
 const Order = (props) => {
-  const { _id, name, pack, add, status } = props.order;
+  const { _id, name, pack, add, status, dateTime } = props.order;
 
   return (
     <tbody>
       <tr>
-        <td>{_id}</td>
         <td>{pack}</td>
+        <td>{dateTime}</td>
         <td>{name}</td>
         <td>{add}</td>
         <td>
@@ -17,7 +17,13 @@ const Order = (props) => {
           </button>
         </td>
         <td>
-          <button className="btn btn-pending text-light">{status}</button>
+          <button
+            className={`btn ${
+              status === "approved" ? "btn-success" : "btn-pending"
+            } text-light`}
+          >
+            {status}
+          </button>
         </td>
       </tr>
     </tbody>
