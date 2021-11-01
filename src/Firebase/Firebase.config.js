@@ -1,3 +1,5 @@
+// firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyC6OJNIOLcDEfCzKfvjCA5b0GM3P1ADbUc",
   authDomain: "express-com.firebaseapp.com",

@@ -10,7 +10,7 @@ import Sponsor from "./Sponsor/Sponsor";
 
 const Home = () => {
   const { isloading } = useAuth();
-  //  fix redirect issue.. like when when we refresh the website the private page redirect to login page..
+  //  fix redirect issue.. and adding loader like spinner
   if (isloading) {
     return (
       <Spinner

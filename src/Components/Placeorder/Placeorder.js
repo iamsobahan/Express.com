@@ -17,6 +17,8 @@ const Placeorder = () => {
   const commentRef = useRef();
   const { location, doctorImg, cost, name } = pack;
 
+  // unique package info collect
+
   useEffect(() => {
     fetch(`https://grisly-dungeon-07150.herokuapp.com/packages/${id}`)
       .then((res) => res.json())
@@ -24,12 +26,16 @@ const Placeorder = () => {
   }, [id]);
 
   const clickhandler = (e) => {
+    // data collect using useRef
+
     const pack = packRef.current.value;
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const number = numberRef.current.value;
     const comment = commentRef.current.value;
     const add = addRef.current.value;
+
+    // current date
 
     const today = new Date();
     const date =
@@ -41,7 +47,7 @@ const Placeorder = () => {
     const time =
       today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     const dateTime = time + " " + date;
-
+    // user info
     const order = {
       pack,
       name,
@@ -52,6 +58,8 @@ const Placeorder = () => {
       status: "pending",
       dateTime,
     };
+
+    // posting order info
 
     fetch("https://grisly-dungeon-07150.herokuapp.com/packages/order", {
       method: "POST",

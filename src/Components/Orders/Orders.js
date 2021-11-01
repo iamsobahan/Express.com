@@ -8,6 +8,7 @@ const Orders = () => {
   const [orders, setorders] = useState([]);
   const { user, isloading } = useAuth();
 
+  // getting my orders
   useEffect(() => {
     fetch("https://grisly-dungeon-07150.herokuapp.com/packages/order")
       .then((res) => res.json())
@@ -18,6 +19,8 @@ const Orders = () => {
       });
   }, [user]);
 
+  // spinner for fixing redirect
+
   if (isloading) {
     return (
       <Spinner
@@ -26,6 +29,7 @@ const Orders = () => {
       />
     );
   }
+  // clickhandler for deleting
 
   const clickhandler = (id) => {
     const proceed = window.confirm("are you going to delete?");

@@ -8,9 +8,12 @@ const Package = (props) => {
     props.package;
   const history = useHistory();
 
+  // create dynamic route handler
+
   const clickhandler = () => {
     history.push(`/placeorder/${_id}`);
   };
+
   return (
     <Col>
       <Card className="card">

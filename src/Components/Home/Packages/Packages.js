@@ -9,13 +9,15 @@ const Packages = () => {
   const { isloading } = useAuth();
   const [user_packages, setuser_package] = useState([]);
 
-  //  fix redirect issue.. like when when we refresh the website the private page redirect to login page..
+  // getting packages info from server
 
   useEffect(() => {
     fetch("https://grisly-dungeon-07150.herokuapp.com/packages")
       .then((res) => res.json())
       .then((data) => setuser_package(data));
   }, []);
+
+  // spinner adding for before data loading
 
   if (isloading) {
     return (

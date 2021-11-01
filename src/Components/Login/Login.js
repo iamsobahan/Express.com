@@ -15,19 +15,14 @@ import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
   const auth = getAuth();
-  // useName for updating user name
   const [useName, setUserName] = useState("");
-
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  // islogin state for toggle register to log in
   const [islogin, setlogin] = useState(false);
-  //  error state for display error
   const [error, seterror] = useState("");
-
   const { googleSignIn, setuser } = useAuth();
 
-  // redirect handler for fixing redirect issue like when after we login ,we can redirect ourdisirable section
+  // redirect handler for fixing redirect issue
   const history = useHistory();
   const location = useLocation();
   const redirect = location.state?.from || "/home";
@@ -47,7 +42,7 @@ const Login = () => {
     setemail(e.target.value);
   };
 
-  // handlerpassword for collecting user password
+  // handlerpassword for collecting data
   const handlePassword = (e) => {
     setpassword(e.target.value);
   };

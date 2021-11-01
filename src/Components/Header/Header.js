@@ -7,6 +7,9 @@ import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useAuth();
+
+  // active class
+
   const active = {
     color: "#f3ca20",
     textDecoration: "underline",

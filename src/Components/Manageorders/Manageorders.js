@@ -8,6 +8,8 @@ const Manageorders = () => {
 
   const { isloading } = useAuth();
 
+  // collect all users order
+
   useEffect(() => {
     fetch("https://grisly-dungeon-07150.herokuapp.com/packages/order")
       .then((res) => res.json())
@@ -19,6 +21,8 @@ const Manageorders = () => {
         setuser(filterItem);
       });
   }, []);
+
+  // deleting order clickhandler
 
   const clickhandler = (id) => {
     const proceed = window.confirm("are you going to delete?");
@@ -36,6 +40,8 @@ const Manageorders = () => {
         });
     }
   };
+
+  // loader
 
   if (isloading) {
     return (

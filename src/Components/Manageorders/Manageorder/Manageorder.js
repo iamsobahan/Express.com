@@ -3,9 +3,13 @@ import React, { useState } from "react";
 const Manageorder = (props) => {
   let { _id, name, email, serial, status } = props.totalUser;
   const [update, setupdate] = useState(status);
+
+  // update info
   const user = {
     status: "approved",
   };
+
+  // update status handler
 
   const updatehandler = (id) => {
     fetch(`https://grisly-dungeon-07150.herokuapp.com/packages/order/${id}`, {

@@ -2,6 +2,8 @@ import React from "react";
 import "./Order.css";
 
 const Order = (props) => {
+  // order displayed as a table and getting data throu props
+
   const { _id, name, pack, add, status, dateTime } = props.order;
 
   return (
