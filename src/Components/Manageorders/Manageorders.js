@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Spinner, Table } from "react-bootstrap";
 import useAuth from "../../Hooks/useAuth";
 import Manageorder from "./Manageorder/Manageorder";
+import "./Manageorders.css";
 
 const Manageorders = () => {
   const [users, setuser] = useState([]);
@@ -53,7 +54,12 @@ const Manageorders = () => {
   }
 
   return (
-    <div className="container text-center my-5">
+    <div className="container text-center my-5 anime_mother">
+      {users.length ? (
+        <i className="far fa-hand-point-down anime"></i>
+      ) : (
+        <i class="fas fa-user-secret secret"></i>
+      )}
       <h3 className="pb-2 mb-5 text-start text-uppercase border-bottom">
         Manage all orders
       </h3>

@@ -1,0 +1,40 @@
+.anime_mother{
+    position: relative;
+}
+
+.anime {
+   font-size: 40px;
+   position: absolute;
+   top: 0;
+   right: 120px;
+   transform:translate(-50%,50%);
+   animation:upDown .4s linear infinite alternate ;
+   -webkit-animation:upDown .4s linear infinite alternate ;
+}
+
+@keyframes upDown {
+    0%{
+        margin-bottom: 0px;
+    }
+
+    50% {
+        margin-bottom: -20px;
+    }
+    100% {
+        margin-top: -20px;
+    }
+}
+
+.secret {
+    font-size: 30px
+}
+
+@media only screen and (max-width: 576px) {
+    .anime {
+        display: none;
+    
+    }
+    .secret {
+        display: none;
+    }
+}
